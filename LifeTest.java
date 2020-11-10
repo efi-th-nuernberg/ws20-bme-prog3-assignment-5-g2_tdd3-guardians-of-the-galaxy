@@ -22,16 +22,35 @@ public class LifeTest {
 
     @Test
     public void destroyLonelyCell() {
+    
+        Life living = new Life();
+        living.setAlive(5, 0);
+        living.setAlive(5, 1);
+        ILife nextGen = living.nextGeneration(); assertTrue(!nextGen.isAlive(5, 1));
     }
 
 
     @Test
     public void keepAliveCell() {
+
+        Life living = new Life();
+        living.setAlive(5, 0);
+        living.setAlive(5, 1);
+        living.setAlive(5, 2);
+        ILife nextGen = living.nextGeneration();assertTrue(nextGen.isAlive(5, 1));
     }
 
 
     @Test
     public void destroyCrowdedCell() {
+      
+        Life living = new Life();
+        living.setAlive(5, 0);
+        living.setAlive(5, 1);
+        living.setAlive(5, 2);
+        living.setAlive(6, 0);
+        living.setAlive(6, 1);
+        ILife nextGen = living.nextGeneration();assertTrue(!nextGen.isAlive(5, 1));
     }
 
 
