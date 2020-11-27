@@ -12,6 +12,7 @@ public class Life implements ILife {
       "     "
     });
     l = (Life) l.nextGeneration();
+ 
   }
 
   public Life() {
@@ -65,11 +66,11 @@ public class Life implements ILife {
     }
     return false;
   }
-
+  
   @Override
   public ILife nextGeneration() {
     boolean[][] nextGeneration = new boolean[getDimY()][getDimX(0)];
-
+  
     for (int y = 0; y < getDimY(); y++) {
 
       int line = getDimX(y);
@@ -93,6 +94,7 @@ public class Life implements ILife {
         }
       }
     }
+    generations= nextGeneration;
     return this;
   }
 
